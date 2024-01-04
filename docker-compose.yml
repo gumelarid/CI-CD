@@ -8,7 +8,7 @@ services:
         volumes:
             - .env:/var/www/.env
         networks:
-            - laratm-net
+            - doc-net
 
     nginx:
         image: prahadi/nginx:${IMAGE_VER}
