@@ -42,6 +42,15 @@ jobs:
     environment: staging
     runs-on: ubuntu-latest
     steps:
+     deployment:
+    needs: build
+    environment: staging
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configure Docker
+        uses: monachus/actions-docker-cli@v2
+        with:
+          version: '20.10.0'
       - name: Deploy to VPS
         uses: appleboy/ssh-action@master
         with:
@@ -56,5 +65,5 @@ jobs:
             sudo git fetch origin staging:staging
             sudo git checkout staging
             sudo git pull origin staging
-            docker-compose build
-            docker-compose up -d  
+            sudo docker-compose build
+            sudo docker-compose up -d
