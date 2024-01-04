@@ -52,7 +52,8 @@ jobs:
           script: |
             whoami
             export IMAGE_VER=${{ github.run_number }}
-            cd ~/app/laratm && git checkout -b staging
-            git pull origin staging
+            cd ~/app/laratm
+            sudo git checkout -b staging
+            sudo git pull origin staging
             docker compose build 
             docker compose up -d      
