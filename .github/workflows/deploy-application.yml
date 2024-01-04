@@ -51,6 +51,7 @@ jobs:
         uses: monachus/actions-docker-cli@v2
         with:
           version: '20.10.0'
+          
       - name: Deploy to VPS
         uses: appleboy/ssh-action@master
         with:
