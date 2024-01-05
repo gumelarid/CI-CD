@@ -51,7 +51,6 @@ jobs:
           port: ${{ secrets.SERVER_PORT  }}
           script: |
             whoami
-            export IMAGE_VER=${{ github.run_number }}
             cd ~/app/laratm
             sudo git fetch origin staging:staging
             sudo git checkout staging
