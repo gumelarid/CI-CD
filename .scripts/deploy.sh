@@ -8,10 +8,10 @@ echo "Deployment started ..."
 (php artisan down) || true
 
 # Checkout to production branch
-git checkout production
+git checkout staging
 
 # Pull the latest version of the app
-git pull origin production
+git pull origin staging
 
 # Install composer dependencies
 composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
