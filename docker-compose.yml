@@ -11,7 +11,7 @@ services:
             - doc-net
 
     nginx:
-        image: prahadi/nginx:${IMAGE_VER}
+        image: prahadi/nginx
         container_name: nginx
         restart: unless-stopped
         tty: true
