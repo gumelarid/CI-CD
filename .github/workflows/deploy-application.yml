@@ -13,7 +13,7 @@ jobs:
         with:
           host: 103.175.219.114
           username: ${{ secrets.SERVER_USERNAME}}
-          password: ${{ secrets.SERVER_PASSWORD}}
+          password: Prahadi96
           port: ${{ secrets.SERVER_PORT  }}
           script: |
             whoami
