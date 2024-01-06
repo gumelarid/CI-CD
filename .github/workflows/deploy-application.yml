@@ -4,9 +4,8 @@ on:
   push:
     branches: ["staging"]
 
-  deployment:
-    needs: build
-    environment: staging
+jobs:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to VPS
