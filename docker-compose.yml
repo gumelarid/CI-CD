@@ -1,28 +1,28 @@
-version: "3"
+version: '3'
 services:
-    app:
-        image: prahadi/cmslara
-        container_name: cmslara
-        restart: unless-stopped
-        tty: true
-        volumes:
-            - .env:/var/www/.env
-        networks:
-            - doc-net
+  app:
+    image: hellodit/laratm:${IMAGE_VER}
+    container_name: laratm
+    restart: unless-stopped
+    tty: true
+    volumes:
+      - .env:/var/www/.env
+    networks:
+      - laratm-net
 
-    nginx:
-        image: prahadi/nginx
-        container_name: nginx
-        restart: unless-stopped
-        tty: true
-        ports:
-            - "8002:80"
-        depends_on:
-            - app
-        networks:
-            - doc-net
+  nginx:
+    image: hellodit/laratm-nginx:${IMAGE_VER}
+    container_name: nginx
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "8002:80"
+    depends_on:
+      - app
+    networks:
+      - laratm-net
 
 #Docker Networks
 networks:
-    doc-net:
-        driver: bridge
+  laratm-net:
+    driver: bridge
