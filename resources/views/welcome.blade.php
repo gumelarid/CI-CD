@@ -7,6 +7,6 @@
     <title>Demo CI/CD</title>
 </head>
 <body>
-    <h1>Demo CI/CD Laravel 1</h1>
+    <h1>Demo CI/CD Laravel test</h1>
 </body>
 </html>
